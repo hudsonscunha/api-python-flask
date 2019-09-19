@@ -2,8 +2,18 @@
 
 Desenvolvida para uma atividade da disciplina Manutenção de Software, ministrada pelo Prof. Dr. Nauber Goes.
 
+## Descrição
+
+Métodos disponíveis na API:
+
++ GET (Tudo)
++ GET (Por ID)
++ POST
++ PUT
++ DELETE
+
 ## Iniciando
-Pelo terminal navegue até a pasta clonada e execute o seguinte comando:
+Execute o seguinte comando:
 ```python
 python app.py
 ```
