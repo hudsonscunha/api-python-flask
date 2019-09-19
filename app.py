@@ -30,14 +30,17 @@ def make_public_task(task):
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
+# Exibe a resposta do jeito que está na base de dados
 # @app.route('/todo/api/tasks', methods=['GET'])
 # def get_tasks():
 #     return jsonify({'tasks': tasks})
 
+# Exibe a resposta de forma personalizada
 @app.route('/todo/api/tasks', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': [make_public_task(task) for task in tasks]})
 
+# Retorna um registro de acordo com o ID especificado no endpoint
 @app.route('/todo/api/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id):
     task = [task for task in tasks if task['id'] == task_id]
@@ -45,6 +48,7 @@ def get_task(task_id):
         abort(404)
     return jsonify({'task': task[0]})
 
+# Cria um novo registro
 @app.route('/todo/api/tasks', methods=['POST'])
 def create_task():
     if not request.json or not 'title' in request.json:
@@ -58,6 +62,7 @@ def create_task():
     tasks.append(task)
     return jsonify({'task': task}), 201
 
+# Atualiza um registro pelo ID especificado no endpoint
 @app.route('/todo/api/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
     task = [task for task in tasks if task['id'] == task_id]
@@ -76,6 +81,7 @@ def update_task(task_id):
     task[0]['done'] = request.json.get('done', task[0]['done'])
     return jsonify({'task': task[0]})
 
+# Exclui um registro pelo ID especificado no endpoint
 @app.route('/todo/api/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
     task = [task for task in tasks if task['id'] == task_id]
