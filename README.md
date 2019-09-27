@@ -1,6 +1,6 @@
 # API REST em Python
 
-Desenvolvida para uma atividade da disciplina Manutenção de Software, ministrada pelo Prof. Dr. Nauber Goes.
+Desenvolvida para uma atividade da disciplina Manutenção de Software na Universidade Federal do Ceará.
 
 ## Descrição
 
@@ -14,6 +14,7 @@ Métodos disponíveis na API:
 
 ## Iniciando
 Execute o seguinte comando:
-```python
-python app.py
-```
+`python app.py`
+
+Com isso a API estará funcionando na porta 3000. Para testar todas as rotas utilize o [Postman](https://www.getpostman.com/) ou [Insomnia](https://insomnia.rest/).
+
