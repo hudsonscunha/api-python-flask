@@ -2,6 +2,7 @@ from flask import Flask, jsonify, abort, make_response, request, url_for
 
 app = Flask(__name__)
 
+# Base de dados
 tasks = [
     {
         'id': 1,
